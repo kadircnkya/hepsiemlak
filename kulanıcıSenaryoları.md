@@ -1,0 +1,1 @@
+[kullanıcıSenaryosuIndir](./utils/Senaryolar.pdf)

@@ -1,0 +1,1 @@
+![veriTabanıDiyagramı](./utils/VeriTabanıDiyagramı.png)
