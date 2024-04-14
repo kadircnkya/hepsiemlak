@@ -1,1 +1,1 @@
-![kullanıcıSenrayosuDiyagramı](./utils/kullanıcıSenaryosuDiyagramı.png)
+![kullanıcıSenrayosuDiyagramı](./utils/kullanıcıSenaryosuDiyagramı1.jpg)
