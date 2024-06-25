@@ -8,7 +8,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import path from 'path';
 import bodyParser from 'body-parser'
-import moongoose from 'moongoose'
+
 dotenv.config();
 mongoose
 .connect(process.env.MONGO)
@@ -37,10 +37,10 @@ app.use('/api/auth',authRouter);
 app.use('/api/listing',listingRouter);
 
 
-app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, '/FRONTEND/dist')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'FRONTEND', 'dist', 'index.html'));
   })
 
   
