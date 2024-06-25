@@ -1,5 +1,4 @@
 import User from '../models/user.model.js'
-import bcryptjs from 'bcryptjs';
 import { errorHandler } from '../utils/error.js';
 import jwt from 'jsonwebtoken';
 import { json } from 'express';
@@ -7,7 +6,7 @@ import { json } from 'express';
 
 export const signup = async (req, res, next) => {
    const { username, email, password } = req.body;
-   const hashedPassword = bcryptjs.hashSync(password, 10)
+   const hashedPassword = hashSync(password, 10)
    const newUser = new User({ username, email, password: hashedPassword });
 
    try {
@@ -30,7 +29,7 @@ export const signin = async (req, res, next) => {
    try {
       const validUser = await User.findOne({ email });
       if (!validUser) return next(errorHandler(404, "User not found !"));
-      const validPassword = bcryptjs.compareSync(password2, validUser.password);
+      const validPassword = compareSync(password2, validUser.password);
       if (!validPassword) return next(errorHandler(401, 'Invalid password !'));
       const token = jwt.sign({ id: validUser._id }, jwtkey);
       console.log("bu bizim keyjwt"+jwtkey)
