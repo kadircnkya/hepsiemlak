@@ -8,6 +8,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import path from 'path';
 import bodyParser from 'body-parser'
+import moongoose from 'moongoose'
 dotenv.config();
 mongoose
 .connect(process.env.MONGO)
@@ -22,12 +23,20 @@ mongoose
 const app=express()
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+app.use(cors(
+    {
+        origin :["https://deploy-mern-1whq.vercel.app"],
+        methods:["POST","GET"],
+        credentials :true
+    }
+));
 app.use(express.json());
 app.use(cookieParser());
 app.listen(3000,()=>{
     console.log('Server is running on port 3000');
 });
+
+
 
 app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
