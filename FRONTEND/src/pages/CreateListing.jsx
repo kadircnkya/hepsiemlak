@@ -13,6 +13,7 @@ import cors from 'cors'
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
+  console.log('currentUser', currentUser)
   const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
@@ -147,7 +148,7 @@ export default function CreateListing() {
       });
       
       const data = await res.json();
-      console.log("data keysimiz"+data.keys);
+      console.log("data keysimiz"+data);
       setLoading(false);
       if (data.success === false) {
         setError(data.message);

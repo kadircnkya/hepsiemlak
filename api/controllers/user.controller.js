@@ -17,7 +17,7 @@ export const updateUser = async (req, res, next) => {
     return next(errorHandler(401, 'You can only update your own account!'));
   try {
     if (req.body.password) {
-      req.body.password = hashSync(req.body.password, 10);
+      req.body.password = req.body.password;
     }
 
     const updatedUser = await User.findByIdAndUpdate(
@@ -47,7 +47,6 @@ export const getUserListings = async (req, res, next) => {
 
     try {
       const listings = await Listing.find({ userRef: req.params.id })
-      console.log("aaaaaas"+listings)
       res.status(200).json(listings)
     } catch (error) {
       next(error);
