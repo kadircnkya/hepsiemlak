@@ -6,8 +6,8 @@ import { json } from 'express';
 
 export const signup = async (req, res, next) => {
    const { username, email, password } = req.body;
-   const hashedPassword = hashSync(password, 10)
-   const newUser = new User({ username, email, password: hashedPassword });
+   // const hashedPassword = hashSync(password, 10)
+   const newUser = new User({ username, email, password: password });
 
    try {
       await newUser.save()
@@ -29,7 +29,8 @@ export const signin = async (req, res, next) => {
    try {
       const validUser = await User.findOne({ email });
       if (!validUser) return next(errorHandler(404, "User not found !"));
-      const validPassword = compareSync(password2, validUser.password);
+      const validPassword = password2 == validUser.password;
+      // compareSync(password2, validUser.password)
       if (!validPassword) return next(errorHandler(401, 'Invalid password !'));
       const token = jwt.sign({ id: validUser._id }, jwtkey);
       console.log("bu bizim keyjwt"+jwtkey)
@@ -55,10 +56,10 @@ export const google = async (req, res, next) => {
             .json(rest);
          }
          else{
-             const generatedPassword=Math.random().toString(36).slice(-8)+Math.random().toString(36).slice(-8);
-             const hashedPassword=bcryptjs.hashSync(generatedPassword,10);
+            //  const generatedPassword=Math.random().toString(36).slice(-8)+Math.random().toString(36).slice(-8);
+            //  const hashedPassword=hashSync(generatedPassword,10);
              const newUser=new User({username:req.body.name.split(" ").join("").toLowerCase() +Math.random().toString(36).slice(-4),
-                email:req.body.email ,password:hashedPassword,avatar:req.body.photo});
+                email:req.body.email, password:req.body.email, avatar:req.body.photo});
                 await newUser.save();
                 const token =jwt.sign({id:newUser._id},jwtkey);
                 const{password:pass, ...rest}=newUser._doc;

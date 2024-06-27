@@ -20,7 +20,7 @@ const SignIn = () => {
     try {
 
       dispatch(signInStart());
-      const res = await fetch('api/auth/signIn',
+      const res = await fetch('/api/auth/signIn',
         {
           method: 'POST',
           headers: {

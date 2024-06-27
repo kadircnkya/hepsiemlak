@@ -11,6 +11,8 @@ const SignUp = () => {
       [e.target.id]: e.target.value,
     });
   }
+  console.log('formdata', formData)
+
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ const SignUp = () => {
     try {
 
       setLoading(true);
-      const res = await fetch('api/auth/signup',
+      const res = await fetch('/api/auth/signup',
         {
           method: 'POST',
           headers: {
