@@ -21,5 +21,9 @@ hepsiemlak web uygulaması<br>
   1.Proje Planı<br/>
   2. [Gereksinim Analizi](./gereksinimAnaliz.md)<br/>
   3. [Kullanıcı Senaryosu Diyagramı](./kullanıcıSenaryosuDiyagramı.md)</br>
-  4. [Veri Tabanı Diyagramı](./veriTabanıDiyagramı.md)<br>
-  5. [Kullanıcı Senaryoları](./kulanıcıSenaryoları.md)
+  4. [Veri Tabanı Diyagramı](./veriTabanıDiyagramı.md)<br/>
+  5. [Kullanıcı Senaryoları](./kulanıcıSenaryoları.md)<br/>
+  6. [Geliştirici ve Kullanıcı Dokümantasyonları](./Geliştirici-ve-Kullanıcı-Dokümantasyonları.md)<br/>
+  7. [Test Aşaması](./Test.md)<br/>
+  8. [Back-end](./back-end.md)<br/>
+  9. [Front-end](./front-end.md)<br/>
