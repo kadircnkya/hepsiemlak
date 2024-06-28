@@ -7,9 +7,9 @@ hepsiemlak web uygulaması<br>
 
 **Proje Kategorisi:** E-ticaret
 
-**Referans Uygulama:** hepsiemlak
+**Referans Uygulama:** [hepsiemlak](https://www.hepsiemlak.com/)
 
-**Referans Adresi:** https://www.hepsiemlak.com/
+**Uygulama Adresi:** [MAG EMLAK](https://hepsiemlak.onrender.com/)
 
 **Grup Adı:** Noble Estate
 
